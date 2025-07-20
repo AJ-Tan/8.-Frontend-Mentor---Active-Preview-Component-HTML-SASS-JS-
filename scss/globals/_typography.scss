@@ -1,0 +1,17 @@
+h1,
+h2,
+h3,
+strong {
+   color: var(--color-primary-1);
+   font-weight: 700;
+}
+
+p {
+   color: var(--color-primary-2);
+   font-weight: 500;
+   line-height: 1.6;
+}
+
+time {
+   color: var(--color-primary-3);
+}

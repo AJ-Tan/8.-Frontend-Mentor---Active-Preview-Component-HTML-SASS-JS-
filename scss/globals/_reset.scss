@@ -1,0 +1,27 @@
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+html {
+   font-size: 0.8125rem;
+}
+
+body {
+   font-family: "Manrope", Arial, Helvetica, sans-serif;
+   background-color: var(--color-bg);
+   min-height: 100vh;
+}
+
+address {
+   font-style: normal;
+}
+
+img {
+   display: block;
+   object-fit: cover;
+   object-position: 0;
+}

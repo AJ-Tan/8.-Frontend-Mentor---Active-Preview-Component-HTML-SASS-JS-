@@ -1,0 +1,138 @@
+@use "../utils" as u;
+
+.article {
+   display: flex;
+   flex-direction: column;
+   gap: var(--spacing-lg-1);
+   border-radius: 1rem;
+
+   max-width: 31rem;
+
+   overflow: hidden;
+   background-color: var(--color-surface);
+
+   &__content,
+   &__header {
+      display: grid;
+   }
+
+   &__header,
+   &__author-section,
+   &__share-menu {
+      padding-inline: var(--spacing-lg-2);
+   }
+
+   &__image {
+      height: 14rem;
+   }
+
+   &__header {
+      gap: var(--spacing-md-1);
+   }
+
+   &__content {
+      gap: var(--spacing-md-1);
+   }
+
+   &__title {
+      font-size: clamp(1.2rem, 0.8rem + 1.387vw, 1.6rem);
+   }
+
+   &__footer {
+      position: relative;
+   }
+
+   &__author-section,
+   &__author {
+      display: flex;
+   }
+
+   &__author-section,
+   &__share-menu {
+      padding-block: var(--spacing-sm);
+   }
+
+   &__author-section {
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   &__author {
+      align-items: center;
+      gap: var(--spacing-md-2);
+
+      &-avatar {
+         border-radius: 100%;
+         max-height: 3rem;
+      }
+   }
+
+   &__share-menu {
+      position: absolute;
+      top: 0;
+
+      display: none;
+
+      align-items: center;
+      gap: var(--spacing-md-2);
+
+      width: 100%;
+      height: 100%;
+
+      background-color: var(--color-primary-1);
+      opacity: 0;
+
+      transition: transform 0.3s linear, opacity 0.3s linear;
+      animation: fade-in 0.3s linear;
+
+      a {
+         min-width: 1.538rem;
+      }
+
+      .share-menu {
+         &__text {
+            color: var(--color-primary-3);
+            font-weight: 500;
+            letter-spacing: 0.3rem;
+            text-transform: uppercase;
+         }
+
+         &__social-media {
+            display: flex;
+            gap: var(--spacing-md-2);
+         }
+      }
+   }
+
+   .share-menu--active {
+      opacity: 1;
+   }
+
+   .article__author-section:has(+ .share-menu--active) .share-button {
+      background-color: var(--color-primary-2);
+      svg path {
+         fill: white;
+      }
+   }
+}
+
+.share-button {
+   z-index: 2;
+
+   display: grid;
+   place-content: center;
+
+   border: none;
+   border-radius: 100%;
+   height: 2.3rem;
+   width: 2.3rem;
+
+   padding: 0.6rem;
+   background-color: var(--color-bg);
+   cursor: pointer;
+
+   svg {
+      width: 15px;
+      height: 13px;
+   }
+}
