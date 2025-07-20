@@ -25,7 +25,7 @@
 
       &__share-menu {
          top: -5.5rem;
-         right: -5.7rem;
+         right: 3.7rem;
 
          border-radius: 1rem;
 
@@ -33,7 +33,7 @@
          width: fit-content;
          padding: var(--spacing-md-2) var(--spacing-lg-2);
 
-         transform: translateY(0);
+         transform: translateY(0) translateX(50%);
 
          &::before {
             content: "";
